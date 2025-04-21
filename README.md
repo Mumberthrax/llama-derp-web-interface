@@ -4,7 +4,7 @@ A modern, browser-based chatbot interface for local LLMs (like llama.cpp), suppo
 
 ---
 
-**Note:** readme and almost all code comopsed by chatgpt. it's... a little bit dumb.
+**Note:** readme and almost all code comopsed by chatgpt. it's... a little bit dumb. I used windsurf with the free trial of chatgpt 4.1 and nearly pure 'vibe coding'. I am not a web developer, and I have not really examined the code here directly. I just bullied chatgpt to fix problems as they appeared. I do not recommend this approach at all unless the quality of the product doesn't really matter, or its something that's easily within the AI's capabilities, like making a simple web app. This one might be a bit more complex than the AI really ought to be handling on its own.
 
 ## Features
 
