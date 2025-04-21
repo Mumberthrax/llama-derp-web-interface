@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>llama.cpp Chatbot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #sidebar-toggle-btn {
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <button id="sidebar-toggle-btn" aria-label="Toggle sidebar"></button>
+    <div id="sidebar"></div>
+    <div id="main-layout">
+        <div id="chat-container">
+            <div id="chat-title-bar"></div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-area">
+                <textarea id="chat-input" rows="2" placeholder="Type your message..."></textarea>
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { initUI } from './js/ui.js';
+        window.addEventListener('DOMContentLoaded', initUI);
+    </script>
+</body>
+</html>

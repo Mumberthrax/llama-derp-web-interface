@@ -1,0 +1,113 @@
+
+Main:
+L . T . BO
+L . M . .
+L . M . .
+L . M . .
+L . I . .
+
+Data.Main:{
+L   = Past conversation list
+T   = Conversation title
+BO  = Options button
+M   = Message display area
+I   = Multiline input
+}
+
+Main.L:
+H  BC
+BW .
+L1 B1
+L2 B2
+LN BN
+
+Data.Main.L:{
+H   = Branding Header
+BC  = Toggle list collapse button
+BW  = New Chat button
+L1  = List entry - previous conversation title
+L2  = another list entry
+LN  = continuing entries
+B1,B2,BN = rename button and delete button for each entry
+}
+
+Main.I:
+I I I B
+
+Data.Main.I:
+{
+I = multiline input
+B = button "send"
+}
+
+Main.M:
+M1
+M2
+MN
+ML
+
+Data.Main.M:{
+M1 = message from chatbot or user
+M2 = another message
+MN = continuing entries of messages
+ML = latest message from chatbot
+}
+
+Main.M.ML:
+I N S . R E O
+. T T T T T T
+. . < D > . .
+
+Data.Main.M.ML:{
+I = Avatar Icon (small png)
+N = Name
+S = Data/timestamp
+R = regenerate button (icon)
+E = edit button (icon)
+O = options button (icon)
+T = Text of the message
+< = left arrow button (icon)
+D = identifier for which regenerated message this is, i.e. "2/3"
+> = right arrow button (icon)
+}
+
+Main.M.MN:
+I N S . . E O
+. T T T T T T
+
+Data.Main.M.MN:{
+I = Avatar Icon (small png)
+N = Name
+S = Data/timestamp
+E = edit button (icon)
+O = options button (icon)
+T = Text of the message
+}
+
+Main.BO,(internal):
+.  T  .
+I  I  I
+I  I  I
+.  B1 B2
+
+Data.Main.BO,(internal):{
+T   = title, e.g. "settings"
+I   = multiline input
+B1  = save button
+B2  = cancel button
+}
+
+Main.BO,(relative):
+L . T . BO
+L O O O .
+L O O O .
+L O O O .
+L . I . .
+
+Data.Main.Bo,(relative):{
+L   = conversation list, shaded
+T   = Conversation title, shaded
+BO  = Options button, shaded
+O   = options modal menu
+I   = multiline input, shaded
+}
