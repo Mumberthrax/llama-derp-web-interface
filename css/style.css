@@ -612,13 +612,14 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     gap: 0;
-    background: #22252b;
+    background: #262626;
+    border: 1px solid #3f3f3f;
     border-radius: 16px;
     padding: 0 0 0 0;
     font-size: 1.08em;
     color: #e6e6e6;
     cursor: pointer;
-    border: 1.5px solid transparent;
+    /* border: 1.5px solid transparent; */
     box-shadow: 0 1px 3px #0001;
     transition: background 0.15s, border 0.13s, color 0.13s;
     position: relative;
