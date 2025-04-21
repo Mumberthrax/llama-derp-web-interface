@@ -19,7 +19,7 @@ A modern, browser-based chatbot interface for local LLMs (like llama.cpp), suppo
 
 ## Demo / GitHub Pages
 
-You can deploy this project as a static site (e.g., GitHub Pages). **However, to function, it requires a running LLM backend server (like llama.cpp) accessible via HTTP from the browser.**
+You can deploy this project as a static site (e.g., GitHub Pages). **However, to function, it requires a running LLM backend server (like llama.cpp) accessible via HTTPS from the browser.**
 
 - Place all files in a GitHub repository.
 - Enable GitHub Pages ("Deploy from branch" or `docs/` folder).
@@ -30,6 +30,7 @@ You can deploy this project as a static site (e.g., GitHub Pages). **However, to
 
 ## Quick Start
 
+0. **it won't work on the github pages site** i think because https issues but I'm not 100% sure. -m
 1. **Clone or Download** this repository.
 2. **(Optional)** Edit `js/api.js` to point to your LLM backend if not using the default llama.cpp endpoint.
 3. **Serve the files with a local web server** (see below), or deploy to GitHub Pages.
