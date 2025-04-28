@@ -356,6 +356,10 @@ export function showCharacterEditModal({
     saveBtn.className = 'character-confirm-btn';
     saveBtn.onclick = () => {
         const handleSave = (avatarData) => {
+            if (!avatarData && character.avatar) {
+                avatarData = character.avatar;
+            }
+            
             const newChar = {
                 ...character,
                 name: nameInput.value.trim(),

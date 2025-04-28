@@ -120,6 +120,15 @@ export function setupInput() {
         }
         setSendState(false);
     }
+    input.addEventListener('input', () => {
+        input.style.height = 'auto';
+        input.style.height = input.scrollHeight + 'px';
+        if (input.scrollHeight > input.offsetHeight) {
+          input.style.overflowY = 'auto';
+        } else {
+          input.style.overflowY = 'hidden';
+        }
+      });
     sendBtn.onclick = () => {
         if (getIsGenerating()) {
             stopGeneration();

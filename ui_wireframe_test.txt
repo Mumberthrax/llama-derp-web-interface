@@ -1,0 +1,230 @@
+2025-04-21 23:58:12 
+
+Main=[[
+S . T . .
+S . M . .
+S . M . .
+S . M . .
+S . I . .
+]]
+
+Data.Main={
+S   = {"Panel", "Sidebar"},
+T   = {"Panel", "Conversation title"},
+M   = {"Panel - Scrollable", "Message display area"},
+I   = {"Panel", "Multiline input"},
+} -- these are not really panels all. only sidebar is, the other three exist within one panel
+-- so maybe we clarify that. we could make a larger display demo, but....
+
+
+Main.T=[[
+T T T BO
+]]
+
+Data.Main.T={
+T   = {"Text", "conversation title"},
+BO  = {"Button", "icon", "⋮" "conversation options"},
+}
+
+
+Main.S=[[
+H  H
+BT .
+BW BW
+L1 L1
+L1 L1
+L1 L1
+HR HR
+BS BS
+BC BC
+]]
+
+Data.Main.S={
+H   = Text; Branding Header
+BT  = Button: icon, hamburger; onclick: Toggle sidebar visibility
+BW  = Button: "New Chat"
+L1  = List; chat conversations
+HR  = Horizontal line
+BS  = Button: "Settings"
+BC  = Button: "Characters"
+}
+
+Main.S.L1=[[
+T1  T1  BO
+T2  T2  BO
+TN  TN  BO
+]]
+
+Data.Main.S.L1={
+T1-N  = Text; conversation title
+BO    = Button: icon, options; visible on hover; onclick:dropdown("rename", "delete", "generate title")
+}
+
+Main.S.Modal(BS)=[[
+.  H  .
+T1 .  .
+I1 I1 I1
+MG T2 .
+MG FS .
+BR .  .
+.  BS BC
+]]
+
+Data.Main.S.Modal(BS)={
+H   = Header Text: "General Settings"
+T1  = Text: "User Name:"
+I1  = Textinput
+MG  = Image; User Avatar
+T2  = Text; "User Avatar:"
+FS  = FileSelect
+BR  = Button: "Reset data"
+BS  = Button: "Save"
+BC  = Button: "Cancel"
+}
+
+Main.S.Modal(BC)=[[
+.  HC .
+LC LC LC
+LC LC LC
+BA .  BC
+]]
+
+Data.Main.S.Modal(BS)={
+HC  = Header Text: "Select Character"
+LC  = List; character cards
+BA  = Button: "+ Add Character"
+BC  = Button: "Close"
+}
+
+Main.S.Modal(BC).LC=[[
+C1, C2, C3
+C4, C5, CN
+]]
+
+Main.S.Modal(BC).LC={
+C1-CN = Card; character selection
+}
+
+Main.S.Modal(BC).LC.CN=[[
+I  I  B
+I  I  I
+I  I  I
+N  N  N
+]]
+
+Main.S.Modal(BC).LC.CN={
+I  = Image; Character avatar
+B  = Button: icon, options; dropdown("Edit", "Delete")
+N  = Text; Character name
+}
+
+Main.S.Modal(BC).Modal(BA) / Main.S.Modal(BC).LC.CN.B.dropdown(edit)=[[
+.  H  .
+T1 .  .
+I1 I1 I1
+MG T2 .
+MG FS .
+T3
+M1 M1 M1
+M1 M1 M1
+T4
+M2 M2 M2
+M2 M2 M2
+.  BS BC
+]]
+
+Main.S.Modal(BC).Modal(BA) / Main.S.Modal(BC).LC.CN.B.dropdown(edit)={
+H  = Header Text: "Create Character" or "Edit Character"
+T1 = Text: "Character Name:"
+I1 = Textinput
+MG = Image; Character avatar
+T2 = Text: "Avatar:"
+FS = FileSelect
+T3 = Text: "System Prompt"
+M1 = Multiline Input
+T4 = Text: "Greeting:"
+M2 = Multiline Input
+BS = Button: "Save"
+BC = Button: "Cancel"
+}
+
+Main.I=[[
+I I I B
+]]
+
+Data.Main.I={
+I = multiline input
+B = Button; "send", toggles to "stop" during text generation
+}
+
+Main.M=[[
+M1
+M2
+MN
+ML
+]]
+
+Data.Main.M={
+M1-N  = messages from chatbot or user
+ML    = latest message from chatbot
+}
+
+Main.M.ML=[[
+I N S . R E O
+. T T T T T T
+. . < D > . .
+]]
+
+Data.Main.M.ML={
+I = Image; Avatar Icon (small png)
+N = Text; Name
+S = Text; Date/timestamp
+R = Button; icon, regenerate
+E = Button; icon, edit
+O = Button; icon, 'options', dropdown("delete")
+T = Multiline Text; Text of the message
+< = Button; icon, left arrow
+D = Text; identifier for which regenerated message this is, i.e. "2/3"
+> = Button; icon, right arrow
+}
+
+Main.M.MN=[[
+I N S . . E O
+. T T T T T T
+]]
+
+Data.Main.M.MN={
+I = Image; Avatar Icon (small png)
+N = Text; Name
+S = Text; Date/timestamp
+E = Button; icon, edit
+O = Button; icon, options
+T = Multiline Text; Text of the message
+}
+
+Main.T.modal(BO)=[[
+.  H  .
+T1 .  .
+I1 I1 I1
+T2 .  .
+I2 I2 I2
+T3 .  .
+M1 M1 M1
+M1 M1 M1
+.  B1 B2
+]]
+
+Data.Main.modal(BO)={
+H   = Text; header "Conversation settings"
+T1  = Text; "User Name:"
+I1  = Textinput;
+T2  = Text; "Character Name:"
+I2  = Textinput;
+T3  = Text; "System Message:"
+M1  = Multiline-input
+B1  = Button: "Save"
+B2  = Button: "Cancel"
+}
+
+
+
