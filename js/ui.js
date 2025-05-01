@@ -114,7 +114,9 @@ export function setupInput() {
         setSendState(true);
         setAbortController(new AbortController());
         try {
-            await streamAssistantResponse(activeConv, messages, idx);
+            await streamAssistantResponse(activeConv, messages, idx, { 
+                signal: abortController.signal // Add this line
+              });
         } catch (e) {
             // If aborted, ignore error
         }
